@@ -1,0 +1,52 @@
+{
+	"contracts": {
+		"MovieList": "./flow/cadence/MovieList.cdc"
+	},
+	"networks": {
+		"emulator": "127.0.0.1:3569",
+		"mainnet": "access.mainnet.nodes.onflow.org:9000",
+		"testnet": "access.devnet.nodes.onflow.org:9000"
+	},
+	"accounts": {
+		"admin-account": {
+			"address": "848b102ea9abb43a",
+			"key": {
+				"type": "file",
+				"location": "admin.pkey"
+			}
+		},
+		"emulator-account": {
+			"address": "f8d6e0586b0a20c7",
+			"key": {
+				"type": "file",
+				"location": "emulator-account.pkey"
+			}
+		},
+		"test": {
+			"address": "8db7c3c43a5311d6",
+			"key": {
+				"type": "file",
+				"location": "test.pkey"
+			}
+		},
+		"testnet-account": {
+			"address": "9838577354a5b166",
+			"key": {
+				"type": "file",
+				"location": "test.pkey"
+			}
+		}
+	},
+	"deployments": {
+		"emulator": {
+			"emulator-account": [
+				"MovieList"
+			]
+		},
+		"testnet": {
+			"test": [
+				"MovieList"
+			]
+		}
+	}
+}
