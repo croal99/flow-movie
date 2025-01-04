@@ -15,10 +15,10 @@ import Sitemark from '@components/SitemarkIcon';
 import ColorModeIconDropdown from '@/shared-theme/ColorModeIconDropdown';
 import * as fcl from "@onflow/fcl";
 
-import {Link} from "react-router-dom";
-import {useEffect, useState} from "react";
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Stack from "@mui/material/Stack";
-import {CardActionArea, CardActions, CardMedia, LinearProgress} from "@mui/material";
+import { CardActionArea, CardActions, CardMedia, LinearProgress } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -41,15 +41,15 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
 }));
 
 export default function AppAppBar() {
-    const [user, setUser] = useState({loggedIn: false});
+  const [user, setUser] = useState({ loggedIn: false });
 
-    useEffect(() => {
-        fcl.currentUser().subscribe(setUser);
+  useEffect(() => {
+    fcl.currentUser().subscribe(setUser);
 
-        return () => {
-            // console.log("uninstall application")
-        }
-    }, []);
+    return () => {
+      // console.log("uninstall application")
+    }
+  }, []);
 
   return (
     <AppBar
@@ -76,14 +76,14 @@ export default function AppAppBar() {
               alignItems: 'center',
             }}
           >
-              {!user.loggedIn ?
-                  <>
-                      <Button onClick={fcl.authenticate}>Connect</Button>
-                  </> :
-                  <>
-                      <Button onClick={fcl.unauthenticate}>Disconnect</Button>
-                  </>
-              }
+            {!user.loggedIn ?
+              <>
+                <Button onClick={fcl.authenticate}>Connect</Button>
+              </> :
+              <>
+                <Button onClick={fcl.unauthenticate}>{user.addr}Disconnect</Button>
+              </>
+            }
             <ColorModeIconDropdown />
           </Box>
         </StyledToolbar>

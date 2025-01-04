@@ -1,12 +1,10 @@
 import Divider from "@mui/material/Divider";
+import Typography from "@mui/material/Typography";
+import {styled} from "@mui/material/styles";
+import Paper from "@mui/material/Paper";
 
 import Logo from '@components/Logo.tsx';
 import MovieList from "@components/MovieList.tsx";
-import Typography from "@mui/material/Typography";
-import * as React from "react";
-import {styled} from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
-import Setup from "@components/Setup.tsx";
 
 const Item = styled(Paper)(({theme}) => ({
     display: 'flex',

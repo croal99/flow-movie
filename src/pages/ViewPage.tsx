@@ -62,7 +62,7 @@ export default function ViewPage() {
     const [user, setUser] = useState({loggedIn: false});
 
     const env = import.meta.env;
-    const MOVIE_CLIENT = env.VITE_MOVIE_CLIENT;
+    const Deployer = env.VITE_PUBLIC_CONTRACT_ADDRESS;
 
     const {id} = useLoaderData();
     const {getBufferFromWalrus} = useWalrus();
@@ -98,7 +98,7 @@ export default function ViewPage() {
         setIsLoading(true);
         const result = await fcl.query({
             cadence: `
-      import MovieList from ${MOVIE_CLIENT}
+      import MovieList from 0x${Deployer}
 
       access(all) fun main(): [MovieList.Info] {
         return MovieList.getList()

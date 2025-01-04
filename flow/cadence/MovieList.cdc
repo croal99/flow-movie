@@ -30,7 +30,7 @@ access(all) contract MovieList {
         }
     }
 
-    access(all) var greeting: String
+access(all) var greeting: String
     access(all) var movies: [Info]
 
     access(all) fun changeGreeting(newGreeting: String) {

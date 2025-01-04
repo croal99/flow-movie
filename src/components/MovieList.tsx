@@ -25,7 +25,7 @@ export default function MovieList() {
     const {MAIN_STORE_ID, getStoreMovies} = useFlowMovie();
 
     const env = import.meta.env;
-    const MOVIE_CLIENT = env.VITE_MOVIE_CLIENT;
+    const Deployer = env.VITE_PUBLIC_CONTRACT_ADDRESS;
 
     const fetchData = async () => {
         if (!user.loggedIn) {
@@ -35,7 +35,7 @@ export default function MovieList() {
         setIsLoading(true);
         const result = await fcl.query({
             cadence: `
-      import MovieList from ${MOVIE_CLIENT}
+      import MovieList from 0x${Deployer}
 
       access(all) fun main(): [MovieList.Info] {
         return MovieList.getList()

@@ -32,3 +32,4 @@ dist-ssr
 *.sw?
 
 test.pkey
+admin.pkey

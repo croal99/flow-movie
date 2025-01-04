@@ -8,6 +8,13 @@
 		"testnet": "access.devnet.nodes.onflow.org:9000"
 	},
 	"accounts": {
+		"admin": {
+			"address": "fdae90925f0d102c",
+			"key": {
+				"type": "file",
+				"location": "admin.pkey"
+			}
+		},
 		"admin-account": {
 			"address": "848b102ea9abb43a",
 			"key": {
@@ -30,10 +37,10 @@
 			}
 		},
 		"testnet-account": {
-			"address": "9838577354a5b166",
+			"address": "8b037e7868341fcc",
 			"key": {
 				"type": "file",
-				"location": "test.pkey"
+				"location": "admin-test.pkey"
 			}
 		}
 	},
@@ -44,7 +51,7 @@
 			]
 		},
 		"testnet": {
-			"test": [
+			"testnet-account": [
 				"MovieList"
 			]
 		}
